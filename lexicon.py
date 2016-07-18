@@ -1,10 +1,5 @@
 lexicon = [
   {
-    "sentiment":
-    {
-      "positive": [],
-      "negative": []
-    },
     "domain":
     {
       "financial": [],
@@ -16,11 +11,26 @@ lexicon = [
     },
     "emotion":
     {
-      "disgust": [],
-      "fear": [],
-      "anger": [],
-      "happy": [],
-      "sad": []
+      "disgust": {
+        "positive_words": [],
+        "negative_words": []
+      },
+      "fear": {
+        "positive_words": [],
+        "negative_words": []
+      },
+      "anger": {
+        "positive_words": [],
+        "negative_words": []
+      },
+      "happy": {
+        "positive_words": [],
+        "negative_words": []
+      },
+      "sad": {
+        "positive_words": [],
+        "negative_words": []
+      }
     }
   }
 ]
