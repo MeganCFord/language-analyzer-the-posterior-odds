@@ -3,8 +3,7 @@ lexicon = [
     "sentiment":
     {
       "positive": [],
-      "negative": [],
-      "neutral": []
+      "negative": []
     },
     "domain":
     {
@@ -15,13 +14,13 @@ lexicon = [
       "politics": [],
       "relationships": []
     },
-    "behavior":
+    "emotion":
     {
-      "aggressive": [],
-      "passive": [],
-      "mentoring": [],
-      "inquisitive": [],
-      "transaction": []
+      "disgust": [],
+      "fear": [],
+      "anger": [],
+      "happy": [],
+      "sad": []
     }
   }
 ]
