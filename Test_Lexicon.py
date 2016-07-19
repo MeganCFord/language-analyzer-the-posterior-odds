@@ -5,26 +5,33 @@ import unittest
 
 class Test_analyzer_creation(unittest.TestCase):
 
-    def test_that_analyzer_argument_is_string(self):
+    @classmethod:
+        def setUpClass(self):
+            sentence_one = Analyzer("This is a test sentence")
+            sentence_bad = Analyzer(2)
+            
 
     def test_that_tokenizer_is_instantiated(self):  # isInstanceOf tokenizer
 
-    def test_that_argument_and_initial_sentence_property_are_equal(self):
+    def test_that_initial sentence_is_string(self):
+
+        self.assertIsInstance(str, self.sentence_one.initial)
+        self.assertEqual("This is a test sentence", self.sentence_one.initial)
 
     def test_printer_of_string_sentence(self):
 
 
 class Test_tokenizer(unittest.TestCase):
 
-    def test_that_domainer_is_instantiated(self):
-
-    def test_that_emotionizer_is_instantiated(self):
-
     def test_what_it_receives_is_the_initial_sentence_property(self):
+
+    def test_that_domainer_was_created(self):
+
+    def test_that_emotionizer_was_created(self):
 
     def test_what_it_outputs_is_a_list(self):
 
-    # we also need tests in here that note the word count, character count, word placement
+    # we also need tests in here that output the word count, character count, word placement
 
 
 
