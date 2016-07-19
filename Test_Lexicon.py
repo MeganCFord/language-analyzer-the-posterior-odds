@@ -56,7 +56,8 @@ class Test_emotionizer(unittest.TestCase):
     # TODO: math test to divide each non-zero counter against total num of accrued points.
     # TODO: print the decimal value of each non-zero counter.
     # TODO: find the highest non-zero value(s)
-    # TODO: send highest value(s) to the behaviorizer (somehow)
+    # TODO: assigns highest value(s) to an object to send to the behaviorizer
+    # TODO: test that we can send more than one value
 
 class Test_sentimentizer(unittest.TestCase):
 
@@ -67,7 +68,7 @@ class Test_sentimentizer(unittest.TestCase):
     # TODO: loop through the emotion counters and test that match adds one, that no match does not add one)
     # TODO: math test to subtract neg from pos and divide result by total num of accrued points.
     # TODO: print the decimal value
-    # TODO: send the value to the behaviorizer
+    # TODO: assigns highest value(s) to an object to send to the behaviorizer
 
 class Test_domainer(unittest.TestCase):
 
@@ -93,11 +94,14 @@ class Test_domainer(unittest.TestCase):
     # TODO: loop test with counter end tests (match adds a point, no match does not add a point)
     # TODO: math test to divide each non-zero counter against total num of accrued points.
     # TODO: print the decimal value of each non-zero counter.
-    # TODO: send the highest value(s) to the behaviorizer
+    # TODO: assigns highest value(s) to an object to send to the behaviorizer
 
 class Test_behaviorizer(unittest.TestCase):
 
     def test_what_it_receives(self):  # going to be receiving a bunch of little tuples or something.
+
+    # TODO: loop test through behavior object to find matches
+    #  TODO: print matches
 
 
 if __name__ == '__main__':
