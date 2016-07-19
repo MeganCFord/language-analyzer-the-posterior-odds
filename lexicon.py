@@ -18,8 +18,10 @@ lexicon = [
           "toxic", "terrible", "vulgar"]
       },
       "fear": {
-        "positive_words": [],
-        "negative_words": []
+        "positive_words": ["alertness", "armed", "attorney", "birth", "cash", "cautious", "compassion",
+        "defend", "destination", "flying", "holiness"],
+        "negative_words": ["abandon", "abduction", "absence", "abyss", "accident", "afraid", "wrath",
+        "victim", "unknown", "tyrant", "terrorize", "surveillance", "superstitious"]
       },
       "anger": {
         "positive_words": ["yell", "awful", "insult"],
