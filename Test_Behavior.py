@@ -1,6 +1,6 @@
 
-import messages
 import unittest
+from Posterior import *
 
 
 class Test_analyzer_creation(unittest.TestCase):
