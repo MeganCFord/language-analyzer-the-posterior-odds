@@ -3,35 +3,46 @@ import unittest
 from Posterior import *
 
 
-class Test_analyzer_creation(unittest.TestCase):
+class Test_posterior(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        sentence_one = Analyzer("This is a test sentence")
-        sentence_bad = Analyzer(2)
-
-    def test_that_tokenizer_is_instantiated(self):  # isInstanceOf tokenizer
-        pass
+        self.sentence_one = Posterior("This is a test sentence")
 
     def test_that_initial_sentence_is_string(self):
-
-        self.assertIsInstance(str, self.sentence_one.initial)
+        self.assertIsInstance(self.sentence_one.initial, str)
         self.assertEqual("This is a test sentence", self.sentence_one.initial)
 
-    def test_printer_of_string_sentence(self):
-        pass
+        with self.assertRaises(TypeError):
+            sentence_bad = Posterior(2)
+            sentence_also_bad = Posterior(set())
 
-    def test_that_behaviorizer_was_also_created(self):
+    # these tests will fail until combined with teammate work.
+    def test_that_spokenizer_is_instantiated(self):
+        self.assertIsInstance(self.sentence_one.spokenizer, Spokenizer())
 
 
 class Test_behaviorizer(unittest.TestCase):
 
-    def test_what_it_receives(self):  # going to be receiving a bunch of little tuples or something.
+    @classmethod
+    def setUpClass(self):
+        sentence_two = Posterior("This is a test sentence")
+
+    def test_that_master_variables_start_as_none(self):
+        self.assertEqual(self.master_domain, None)
+        self.assertEqual(self.master_emotion, None)
+        self.assertEqual(self.master_sentiment, None)
+
+        # NOTE: the other classes should be sending final values to these variables after they're done with their calculations?
+
+    def test_some_kind_of_non_none_checker(self):
         pass
+
+
     # TODO: loop test through behavior object to find matches
-    # TODO: print matches
+
+
 
 
 if __name__ == '__main__':
     unittest.main()
-
