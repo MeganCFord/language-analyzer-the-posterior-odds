@@ -10,15 +10,15 @@ lexicon = [
         "be", "relax", "sit", "run", "sick", "get", "plan", "day", "night", "sun", "moon", "goal", "reward",
         "punishment", "bad", "taste", "good", "done", "did", "prefer", "like", "hate", "loan", "pay",
         "buy", "desire", "want"],
-      "scientific": [],
-      "educational": [],
-      "politics": [],
-      "relationships": []
+      "scientific": ['animals', 'science', 'fact', 'biology','life', 'plants', 'frogs', 'aliens', 'planets', 'discect', 'living', 'matter', 'atoms', 'engineering', 'engineer', 'make', 'build', 'create', 'robot', 'function', 'machine', 'bits'],
+      "educational": ['instruction', 'direction', 'mentor', 'learn', 'teach', 'study', 'knowledge', 'practice', 'skill', 'guidance', 'scholarship', 'improvement', 'enlightnement', 'coaching', 'nurture', 'lead', 'guide', 'discipline' ],
+      "politics": ['people', 'leader', 'govern', 'law', 'policy', 'rights', 'protest', 'legal', 'candidate', 'election', 'republican', 'democtratic', 'justice', 'tax', 'taxes', 'debate', 'congress', 'political', 'president', 'rules'],
+      "relationships": ['people', 'family', 'mother', 'father', 'dad', 'mom', 'brother', 'sister', 'cousin', 'relative', 'friend', 'friendship', 'husband', 'wife', 'boyfriend', 'girlfriend', 'fiance', 'lover', 'colleague', 'enemies', 'enemy', 'talk', 'talking', 'converse', 'relate', 'meet', 'meeting', 'club', 'connection', 'connect', 'bridge', 'link']
     },
     "emotion":
     {
       "disgust": {
-        "positive_words": [],
+        "positive_words": ['eating', 'muscles', 'newborn', 'gas', 'sweat', 'cake', 'toothpaste', 'underwear', 'comedy', 'rain', 'hottubs', 'blood', 'toilet', 'crumbs', 'soda', 'jail', 'uncle', 'van', 'bugs', 'kissing', 'wrinkles', 'beans' ],
         "negative_words": ["idiot", "sick", "annoy", "bad", "gross", "disgust", "awful", "vomit",
           "cannibal", "carcass", "rot", "dislike", "hate", "worthless", "weird", "ugly", "trash",
           "toxic", "terrible", "vulgar"]
