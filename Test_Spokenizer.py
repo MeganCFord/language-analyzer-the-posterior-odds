@@ -1,17 +1,25 @@
 import unittest
+import nltk
 from Posterior import *
+from Spokenizer import *
 
-class Test_tokenizer(unittest.TestCase):
+class Test_Spokenizer(unittest.TestCase):
 
-    def test_what_it_receives_is_the_initial_sentence_property(self):
+    def test_sentence_converts_to_lower(self):
+        test_sentence = Spokenizer("This is A sentence.")
+        self.assertEqual(test_sentence.sentence, "this is a sentence.")
+
+    def test_nltk_tokenized_sentence_outputs_a_list(self):
         pass
+
     def test_that_domainer_was_created(self):
         pass
+
     def test_that_emotionizer_was_created(self):
         pass
-    def test_what_it_outputs_is_a_list(self):
+
+    def test_that_sentimentizer_was_created(self):
         pass
-    # we also need tests in here that output the word count, character count, word placement
 
 
 if __name__ == '__main__':
