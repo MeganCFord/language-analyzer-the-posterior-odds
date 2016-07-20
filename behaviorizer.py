@@ -38,7 +38,7 @@ class Behaviorizer:
             return behaviors['Behaviors']
             # pprint(behaviors)
 
-    def find_prediction(self, masters):
+    def find_prediction(self, master):
         '''
         this function receives a stringified tuple with three items in it,
         finds a match within a dictionary of pre-defined behavior predictions,
@@ -50,9 +50,10 @@ class Behaviorizer:
         example: ('financial', 'sad', 'negative')
 
         '''
-        for prediction in self.behavior_dict.items():
-            if masters == prediction:
-                print(prediction)
-                return prediction
+        for key, value in self.behavior_dict.items():
+            if master == key:
+                print(key)
+                print(master)
+                return value
         # return a string from the behaviors lexicon.
         # print the returned value.

@@ -50,12 +50,12 @@ class Test_behaviorizer(unittest.TestCase):
 
     def test_json_load(self):
         self.assertIsInstance(self.behaviorizer_test.behavior_dict, dict)
-        self.assertIn("(positive, happy, scientific)", self.behaviorizer_test.behavior_dict)
-        self.assertEqual("pregnant.", self.behaviorizer_test.behavior_dict["(negative, fear, behavioral)"])
+        self.assertIn("('positive', 'happy', 'scientific')", self.behaviorizer_test.behavior_dict)
+        self.assertEqual("pregnant.", self.behaviorizer_test.behavior_dict["('negative', 'fear', 'behavioral')"])
 
     def test_find_prediction(self):
         self.assertEqual(self.behaviorizer_test.predicted_behavior, "discovering benevolent aliens.")
-        self.assertEqual(self.another_behaviorizer_test.predicted_behavior, "distrusting authority.")
+        self.assertEqual(self.another_behaviorizer_test.predicted_behavior, "rioting.")
 
 
 if __name__ == '__main__':
