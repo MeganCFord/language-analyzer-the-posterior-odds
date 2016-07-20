@@ -19,12 +19,17 @@ class Behaviorizer:
 
     def __init__(self, domain, emotion, sentiment):
 
-        self.behavior_list = self.import_json()
+        self.behavior_dict = self.import_json()
         self.peram_tuple = (domain, emotion, sentiment)
-        self.prediction = self.find_prediction(self.peram_tuple)
+        self.predicted_behavior = self.find_prediction(str(self.peram_tuple))
 
     def import_json(self):
-        # TODO: write docstring here.
+        '''
+        this function imports and parses our lexicon of pre-written behavior predictions.
+
+        arguments: none
+
+        '''
         import json
         from pprint import pprint
         # loads json of potential behaviors (I think).
@@ -34,8 +39,20 @@ class Behaviorizer:
             # pprint(behaviors)
 
     def find_prediction(self, masters):
-        # TODO: write docstring here.
-        # loop through behavior list somehow.
+        '''
+        this function receives a stringified tuple with three items in it,
+        finds a match within a dictionary of pre-defined behavior predictions,
+        and returns the string value for the matching key.
+
+        arguments: one tuple with three items in it.
+        Each item is the string name of the highest-rated value for each of the three Posterior analyzation categories:
+        In order: domain, emotion, sentiment.
+        example: ('financial', 'sad', 'negative')
+
+        '''
+        for prediction in self.behavior_dict.items():
+            if masters == prediction:
+                print(prediction)
+                return prediction
         # return a string from the behaviors lexicon.
         # print the returned value.
-        pass
