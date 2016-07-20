@@ -2,7 +2,7 @@ class Posterior:
 
     def __init__(self, string):
         
-        self.initial = string
+        self.initial = str(string)
         # TODO: handle if it's not a string. maybe str()?
 
         self.spokenizer = Spokenizer(Posterior.initial)
@@ -14,25 +14,24 @@ class Posterior:
 
         self.predicted_behavior = Behaviorizer(Posterior.master_domain, Posterior.master_emotion, Posterior.master_sentiment)
 
-class Behaviorizer:
 
+class Behaviorizer:
 
     def __init__(self, domain, emotion, sentiment):
 
         self.behavior_list = self.import_json()
-        # TODO: make the three perameters a tuple
-        self.peram_set = set(domain, emotion, sentiment)
-        self.peram_tuple = tuple(self.peram_set)
-        self.prediction = self.find_prediction(self.peram_set)
-
+        self.peram_tuple = (domain, emotion, sentiment)
+        self.prediction = self.find_prediction(self.peram_tuple)
 
     def import_json(self):
         # TODO: write docstring here.
         import json
+        from pprint import pprint
         # loads json of potential behaviors (I think).
         with open('Behavior_List.json') as data_file:
             behaviors = json.load(data_file)
-            print(behaviors['Behaviors'][0])
+            return behaviors['Behaviors']
+            # pprint(behaviors)
 
     def find_prediction(self, masters):
         # TODO: write docstring here.
@@ -40,8 +39,3 @@ class Behaviorizer:
         # return a string from the behaviors lexicon.
         # print the returned value.
         pass
-
-
-#questions:
-# do I need any other docstrings besides find_prediction?
-# 

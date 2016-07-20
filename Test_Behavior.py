@@ -13,10 +13,13 @@ class Test_posterior(unittest.TestCase):
         self.assertIsInstance(self.sentence_one.initial, str)
         self.assertEqual("This is a test sentence", self.sentence_one.initial)
 
-        # what if I just stringified everything in the argument, to make sure?
-        with self.assertRaises(TypeError):
-            sentence_bad = Posterior(2)
-            sentence_also_bad = Posterior(set())
+    def test_stringification_of_initial_sentence_edge_cases(self):
+        self.number_sentence = Posterior(23)
+        self.list_sentence = Posterior(["hey", "nope"])
+        self.assertIsInstance(self.number_sentence.initial, str)
+        self.assertIsInstance(self.list_sentence.initial, str)
+        self.assertEqual(self.number_sentence.initial, "23")
+        self.assertEqual(self.list_sentence.initial, "['hey', 'nope']")
 
 
     # this test will fail until combined with teammate work.
@@ -31,11 +34,13 @@ class Test_behaviorizer(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.sentence_json = Behaviorizer("positive", "happy", "scientific")
+        self.behaviorizer_test = Behaviorizer("positive", "happy", "scientific")
 
     def test_json_load(self):
-    # TODO: test the loading of the json.
-    # TODO: test that the json is traversable.
+        self.assertIsInstance(self.behaviorizer_test.behavior_list, object)
+        self.assertIn({"(positive, happy, scientific)": "discovering benevolent aliens."}, self.behaviorizer_test.behavior_list)
+        self.assertEqual("", self.behaviorizer_test.behavior_list[(negative, fear, behavioral)])
+    # TODO: test that the tuple has three strings in it.
     # TODO: test that we're passing in a tuple.
     # TODO: test that the tuples will match up.
         pass
