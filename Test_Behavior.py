@@ -23,26 +23,7 @@ class Test_posterior(unittest.TestCase):
 
 
 class Test_behaviorizer(unittest.TestCase):
-
-    @classmethod
-    def setUpClass(self):
-        sentence_two = Posterior("This is a test sentence")
-
-    def test_that_master_variables_start_as_none(self):
-        self.assertEqual(self.master_domain, None)
-        self.assertEqual(self.master_emotion, None)
-        self.assertEqual(self.master_sentiment, None)
-
-        # NOTE: the other classes should be sending final values to these variables after they're done with their calculations?
-
-    def test_some_kind_of_non_none_checker(self):
-        pass
-
-
-    # TODO: loop test through behavior object to find matches
-
-
-
+    pass
 
 if __name__ == '__main__':
     unittest.main()
