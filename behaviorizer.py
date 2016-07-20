@@ -21,7 +21,9 @@ class Behaviorizer:
 
         self.behavior_dict = self.import_json()
         self.peram_tuple = (domain, emotion, sentiment)
-        self.predicted_behavior = self.find_prediction(self.peram_tuple)
+        self.predicted_behavior = self.find_prediction(str(self.peram_tuple))
+
+        print("this sentence is {0}, {1}, and {2}, so the speaker probably is: {3}".format(self.peram_tuple[0], self.peram_tuple[1], self.peram_tuple[2], self.predicted_behavior))
 
     def import_json(self):
         '''
@@ -50,10 +52,11 @@ class Behaviorizer:
         example: ('financial', 'sad', 'negative')
 
         '''
-        master_string = str(master)
         for key, value in self.behavior_dict.items():
-            if master_string == key:
-                print("this sentence is {0}, {1}, and {2}, so the speaker probably is: {3}".format(master[0], master[1], master[2], value))
+            if master == key:
                 return value
-        # return a string from the behaviors lexicon.
-        # print the returned value.
+
+        
+        # ALTERNATE OPTION although it returns a list.
+        # return [value for key, value  in self.behavior_dict.items() if master == key]
+        
