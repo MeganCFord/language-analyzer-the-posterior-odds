@@ -7,7 +7,11 @@ class Spokenizer:
     def __init__(self, sentence):
 
         self.raw_sentence = sentence
-        self.parsed_sentence = self.parse_sentence()
+        parsed_sentence = self.parse_sentence()
+
+        self.domainer = Domainer(parsed_sentence)
+        self.emotionizer = Emotionizer(parsed_sentence)
+        self.sentimentizer = Sentimentizer(parsed_sentence)
 
     def parse_sentence(self):
 
@@ -17,9 +21,8 @@ class Spokenizer:
         list = nltk.word_tokenize(sentence)
 
         self.stemmed_list = [stemmer.stem(l) for l in list]
+        print(self.stemmed_list)
         return self.stemmed_list
 
-        # self.domainer = Domainer(stemmed_list)
-        # self.emotionizer = Emotionizer(stemmed_list)
-        # self.sentimentizer = Sentimentizer(stemmed_list)
+
 

@@ -4,9 +4,9 @@ from Posterior import *
 from Spokenizer import *
 
 # whatever these will be called, they need importing
-# from Domainer import *
-# from Emotionizer import *
-# from Sentimentizer import *
+from Domainer import *
+from Emotionizer import *
+from Sentimentizer import *
 
 class Test_Spokenizer(unittest.TestCase):
     # Can't test individually for lowercase-ing and list-ifying.
@@ -17,19 +17,16 @@ class Test_Spokenizer(unittest.TestCase):
         self.assertEqual(phrase.parse_sentence(), ['bake', 'a', 'cake', ',', 'and', 'eat', 'it', 'tomorrow'])
 
     def test_that_domainer_property_was_initialized(self):
-        # test_spokenizer = Spokenizer("Duh, a sentence")
-        # self.assertIsInstance(test_spokenizer.domainer, Domainer)
-        pass
+        test_spokenizer = Spokenizer("Duh, a sentence")
+        self.assertIsInstance(test_spokenizer.domainer, Domainer())
 
     def test_that_emotionizer_property_was_initialized(self):
-        # test_spokenizer = Spokenizer("Here's another!!")
-        # self.assertIsInstance(test_spokenizer.emotionizer, Emotionizer)
-        pass
+        test_spokenizer = Spokenizer("Here's another!!")
+        self.assertIsInstance(test_spokenizer.emotionizer, Emotionizer())
 
     def test_that_sentimentizer_property_was_initialized(self):
-        # test_spokenizer = Spokenizer("What up, language?")
-        # self.assertIsInstance(test_spokenizer.sentimentizer, Spokenizer)
-        pass
+        test_spokenizer = Spokenizer("What up, language?")
+        self.assertIsInstance(test_spokenizer.sentimentizer, Spokenizer())
 
 if __name__ == '__main__':
     unittest.main()
