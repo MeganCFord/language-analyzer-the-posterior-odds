@@ -14,14 +14,14 @@ class Posterior:
         self.master_emotion = "happy"
         self.master_sentiment = "positive"
 
-        self.predicted_behavior = Behaviorizer(self.master_domain, self.master_emotion, self.master_sentiment)
+        self.predicted_behavior = Behaviorizer(self.master_sentiment, self.master_emotion, self.master_domain)
 
 class Behaviorizer:
 
-    def __init__(self, domain, emotion, sentiment):
+    def __init__(self, sentiment, emotion, domain):
 
         self.behavior_dict = self.import_json()
-        self.peram_list = [domain, emotion, sentiment]
+        self.peram_list = [sentiment, emotion, domain]
         self.prediction = self.find_prediction(str(self.peram_list))
 
         # prints the final result.
