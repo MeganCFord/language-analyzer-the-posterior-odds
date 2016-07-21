@@ -17,7 +17,6 @@ class Spokenizer:
 
         stemmer = PorterStemmer()
 
-
         list = nltk.word_tokenize(self.raw_sentence.lower())
 
         self.stemmed_list = [stemmer.stem(l) for l in list]
