@@ -36,7 +36,7 @@ class Domainer:
         return self.financial_count
 
     def behavioral_counter(self):
-         """
+        """
         The behavioral_counter adds a 1 for each word in the list passed in that matches the behavioral lexicon and then adds them together, stores and returns the total of 1s added to behavioral_count
         """
         self.behavioral_count = sum([1 for word in self.sample_list
