@@ -63,9 +63,15 @@ class Domainer:
 
     def domain_decimal_math(self):
         if self.total_domain_points == 0:
-            self.final_domain_values = dict.fromkeys(lexicon.keys(), 0)
+            self.final_domain_values = {
+                "financial": 0,
+                "behavioral": 0,
+                "scientific": 0,
+                "educational": 0,
+                "politics": 0,
+                "relationships": 0
+            }
         else:
-
             self.final_domain_values = {
                 "financial": self.financial_total / self.total_domain_points,
                 "behavioral": self.behavioral_total/self.total_domain_points,
@@ -74,12 +80,11 @@ class Domainer:
                 "politics": self.political_total/self.total_domain_points,
                 "relationships": self.relationships_total/self.total_domain_points
                 }
-        print(self.final_domain_values)
+
         return self.final_domain_values
 
     def find_highest_domain(self):
         self.highest_domain = max(self.final_domain_values.keys(), key=(lambda key: self.final_domain_values[key]))
-        print(self.highest_domain)
         return self.highest_domain
 
     def give_me_highest_domain(self):
