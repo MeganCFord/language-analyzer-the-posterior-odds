@@ -13,7 +13,7 @@ lexicon = {
     "scientific": ['animals', 'science', 'scientific', 'fact', 'biology', 'life', 'plants', 'frogs', 'aliens', 'planets', 'discect',
       'living', 'matter', 'atoms', 'engineering', 'engineer', 'evidence', 'make', 'build', 'create', 'robot', 'function', 'machine', 'bits', 'space'
     ],
-    "educational": ['instruction', 'experimenting', 'smart', 'learning', 'direction', 'mentor', 'learn', 'teach',
+    "educational": ['instruction', 'school', 'experimenting', 'smart', 'learning', 'direction', 'mentor', 'learn', 'teach',
       'study', 'knowledge', 'practice', 'skill', 'guidance', 'scholarship', 'improvement', 'enlightnement', 'coaching', 'nurture', 'lead',
       'guide', 'discipline'
     ],

@@ -29,11 +29,11 @@ class Spokenizer:
         '''
         stemmer = PorterStemmer()
 
-        list = nltk.word_tokenize(self.raw_sentence.lower())
+        self.the_list = nltk.word_tokenize(self.raw_sentence.lower())
 
-        self.stemmed_list = [stemmer.stem(l) for l in list]
+        # self.stemmed_list = [stemmer.stem(l) for l in list]
         # print(self.stemmed_list)
-        return self.stemmed_list
+        return self.the_list
 
 
 
