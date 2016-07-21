@@ -11,7 +11,7 @@ class Domainer:
         self.political_total = self.political_counter()
         self.relationships_total = self.relationships_counter()
         # total of all the points from the above counters.
-        self.total_domain_points =self.total_all_domain_points()
+        self.total_domain_points = self.total_all_domain_points()
         # dictionary of the counter values vs the total number of points assigned.
         self.domain_decimals = self.domain_decimal_math()
         # a string of the highest domain value, to be used in the behaviorizer.

@@ -1,10 +1,10 @@
-lexicon = [
+lexicon = {
   "domain": {
     "financial": ["money", "cash", "class", "dollar", "loan", "pay", "buy", "purchase", "get", "acquire",
-      "sell", "sale", "trade", "rent", "mortgage", "rate", "invest", "devest", "lose", "gain",
-      "total", "divide", "subtract", "add", "check", "bill", "debt", "landlord", "earn", "owe",
-      "stock", "bond"
-    ],
+                  "sell", "sale", "trade", "rent", "mortgage", "rate", "invest", "devest", "lose", "gain",
+                  "total", "divide", "subtract", "add", "check", "bill", "debt", "landlord", "earn", "owe",
+                  "stock", "bond"
+                  ],
     "behavioral": ["acting", "behavior", "do", "crazy", "make", "made", "confidence", "cook", "eat", "ate", "date", "go", "play", "see", "watch",
       "be", "relax", "sit", "run", "sick", "get", "plan", "day", "night", "sun", "moon", "goal", "reward",
       "punishment", "bad", "taste", "good", "done", "did", "prefer", "like", "manipulate", "hate", "loan", "pay",
@@ -92,4 +92,4 @@ lexicon = [
       ]
     }
   }
-]
+}
