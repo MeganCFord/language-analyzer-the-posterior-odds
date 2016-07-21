@@ -3,7 +3,7 @@ class Posterior:
     def __init__(self, string):
         
         self.initial = str(string)
-        # TODO: handle if it's not a string. maybe str()?
+        print("your sentence is" + self.initial)
 
         self.spokenizer = Spokenizer(Posterior.initial)
 
@@ -14,7 +14,6 @@ class Posterior:
 
         self.predicted_behavior = Behaviorizer(Posterior.master_domain, Posterior.master_emotion, Posterior.master_sentiment)
 
-
 class Behaviorizer:
 
     def __init__(self, domain, emotion, sentiment):
@@ -23,6 +22,7 @@ class Behaviorizer:
         self.peram_tuple = (domain, emotion, sentiment)
         self.predicted_behavior = self.find_prediction(str(self.peram_tuple))
 
+        # prints the final result.
         print("this sentence is {0}, {1}, and {2}, so the speaker probably is: {3}".format(self.peram_tuple[0], self.peram_tuple[1], self.peram_tuple[2], self.predicted_behavior))
 
     def import_json(self):
@@ -56,7 +56,6 @@ class Behaviorizer:
             if master == key:
                 return value
 
-        
+
         # ALTERNATE OPTION although it returns a list.
         # return [value for key, value  in self.behavior_dict.items() if master == key]
-        

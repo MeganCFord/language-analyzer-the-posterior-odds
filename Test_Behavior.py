@@ -1,4 +1,3 @@
-
 import unittest
 from Posterior import *
 
@@ -27,7 +26,6 @@ class Test_posterior(unittest.TestCase):
     # this test will fail until combined with teammate work.
     def test_that_spokenizer_is_instantiated(self):
         self.assertIsInstance(self.sentence_one.spokenizer, Spokenizer())
-
 
 
 class Test_behaviorizer(unittest.TestCase):
