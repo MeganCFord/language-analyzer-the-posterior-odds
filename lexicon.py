@@ -9,10 +9,9 @@ lexicon = {
         "be", "relax", "sit", "run", "sick", "get", "plan", "day", "night", "sun", "moon", "goal", "reward",
         "punishment", "bad", "taste", "good", "done", "did", "prefer", "like", "hate", "loan", "pay",
         "buy", "desire", "want"],
-
       "scientific": ['animals', 'science', 'scientific','fact', 'biology','life', 'plants', 'frogs', 'aliens', 'planets', 'discect', 'living', 'matter', 'atoms', 'engineering', 'engineer', 'make', 'build', 'create', 'robot', 'function', 'machine', 'bits'],
-      "educational": ['instruction', 'smart', 'learning','direction', 'mentor', 'learn', 'teach', 'study', 'knowledge', 'practice', 'skill', 'guidance', 'scholarship', 'improvement', 'enlightnement', 'coaching', 'nurture', 'lead', 'guide', 'discipline' ],
-      "politics": ['people', 'leader', 'govern', 'law', 'policy', 'rights', 'protest', 'legal', 'candidate', 'election', 'republican', 'democtratic', 'justice', 'tax', 'taxes', 'debate', 'congress', 'political', 'president', 'rules'],
+      "educational": ['instruction', 'school', 'smart', 'learning','direction', 'mentor', 'learn', 'teach', 'study', 'knowledge', 'practice', 'skill', 'guidance', 'scholarship', 'improvement', 'enlightnement', 'coaching', 'nurture', 'lead', 'guide', 'discipline' ],
+      "politics": ['leader', 'govern', 'law', 'policy', 'rights', 'protest', 'legal', 'candidate', 'election', 'republican', 'democtratic', 'justice', 'tax', 'taxes', 'debate', 'congress', 'political', 'president', 'rules'],
       "relationships": ['people', 'family', 'mother', 'father', 'dad', 'mom', 'brother', 'sister', 'cousin', 'relative', 'relational', 'friend', 'friendship', 'husband', 'wife', 'boyfriend', 'girlfriend','fiance', 'lover', 'colleague', 'enemies', 'enemy', 'talk', 'talking', 'converse', 'relate', 'meet', 'meeting', 'club', 'connection', 'connect', 'bridge', 'link']
     },
     "emotion":
