@@ -16,9 +16,9 @@ class Spokenizer:
     def parse_sentence(self):
 
         stemmer = PorterStemmer()
-        sentence = self.raw_sentence.lower()
 
-        list = nltk.word_tokenize(sentence)
+
+        list = nltk.word_tokenize(self.raw_sentence.lower())
 
         self.stemmed_list = [stemmer.stem(l) for l in list]
         print(self.stemmed_list)
