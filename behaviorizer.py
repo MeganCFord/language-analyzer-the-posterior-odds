@@ -12,7 +12,7 @@ class Posterior:
         # TODO: rename these three finders to what teammates name their find-highest-variable functions.
         self.master_domain = self.spokenizer.domainer.highest_domain
         self.master_emotion = "happy"
-        self.master_sentiment = "positive"
+        self.master_sentiment = "negative"
 
         self.predicted_behavior = Behaviorizer(self.master_sentiment, self.master_emotion, self.master_domain)
 
