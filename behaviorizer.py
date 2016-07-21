@@ -8,7 +8,7 @@ class Posterior:
         self.spokenizer = Spokenizer(Posterior.initial)
 
         # TODO: rename these three finders to what teammates name their find-highest-variable functions.
-        self.master_domain = Domainizer.find_master()
+        self.master_domain = Domainizer.give_me_highest_domain()
         self.master_emotion = Emotionizer.find_master()
         self.master_sentiment = Sentimentizer.find_master()
 
