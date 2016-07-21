@@ -36,7 +36,7 @@ class Domainer:
         return self.financial_count
 
     def behavioral_counter(self):
-        """
+         """
         The behavioral_counter adds a 1 for each word in the list passed in that matches the behavioral lexicon and then adds them together, stores and returns the total of 1s added to behavioral_count
         """
         self.behavioral_count = sum([1 for word in self.sample_list
@@ -78,7 +78,6 @@ class Domainer:
             if word in lexicon["domain"]["relationships"]])
         return self.relationships_count
 
-
     def domain_decimal_math(self):
         """
         This function first checks to see if the total domain points is at zero, if so, it creates a dictionary where the keys are the different domains and the values are set to zero. Else, it takes the total from from each counter and divides that number by the total of ALL of the counters and returns the final domain values as a decimal
@@ -112,14 +111,13 @@ class Domainer:
         return self.highest_domain
 
     def give_me_highest_domain(self):
-         """
+        """
         This function simply gives us access to the domain with the highest counter
         """
         return self.highest_domain
 
-
     def __str__(self):
-         """
+        """
         This is the a string of all of the information that we need from this class Domainer and can be printed in the terminal when importing Domainer
         """
-           return "this sentence has an domain count of: {0} financial, {1} behavioral, {2} scientific, {3} educational,  {4} politics, and {5} relationships".format(self.domain_decimals["financial"], self.domain_decimals["behavioral"], self.domain_decimals["scientific"], self.domain_decimals["educational"], self.domain_decimals["politics"], self.domain_decimals["relationships"])
+        return "this sentence has an domain count of: {0} financial, {1} behavioral, {2} scientific, {3} educational,  {4} politics, and {5} relationships".format(self.domain_decimals["financial"], self.domain_decimals["behavioral"], self.domain_decimals["scientific"], self.domain_decimals["educational"], self.domain_decimals["politics"], self.domain_decimals["relationships"])
