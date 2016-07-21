@@ -49,7 +49,17 @@
     "('negative', 'fear', 'politics')" : "distrusting authority.",
     "('negative', 'anger', 'politics')" : "rioting.",
     "('negative', 'happy', 'politics')" : "corrupt.",
-    "('negative', 'sad', 'politics')" : "feeling powerless resignation."
+    "('negative', 'sad', 'politics')" : "feeling powerless resignation.",
+    "('positive', 'disgust', 'relationships')" : "pumped to break up with someone.",
+    "('positive', 'fear', 'relationships')" : "crushing on someone.",
+    "('positive', 'anger', 'relationships')" : "feeling masochistic or mysogynistic.",
+    "('positive', 'happy', 'relationships')" : "in love.",
+    "('positive', 'sad', 'relationships')" : "reliving a happy memory.",
+    "('negative', 'disgust', 'relationships')" : "experiencing the bad breath of a significant other.",
+    "('negative', 'fear', 'relationships')" : "experiencing stockholm syndrome.",
+    "('negative', 'anger', 'relationships')" : "being cheated on.",
+    "('negative', 'happy', 'relationships')" : "dumped, but has chocolate.",
+    "('negative', 'sad', 'relationships')" : "dumped."
   }
 }
 
