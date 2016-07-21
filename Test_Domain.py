@@ -5,11 +5,10 @@ class Test_domainer(unittest.TestCase):
     @classmethod
     def setUpClass(self):
 
-        self.original_list = ['apple']
+        self.original_list = Domainer(['apple'])
 
     def test_what_it_receives_is_a_list(self):
-        sample_list = Domainer(self.original_list)
-        self.assertIsInstance(sample_list.sample_list, list)
+        self.assertIsInstance(self.original_list.sample_list, list)
 
     def test_financial_counter(self):
         money_list = Domainer(["this","is","a","money","test"])
@@ -49,17 +48,17 @@ class Test_domainer(unittest.TestCase):
 
     def test_list_returns_domain(self):
         this_list1 = Domainer(['money', 'money', 'money', 'aliens'])
-        self.assertEqual(this_list1.domain_decimal_math(), "financial")
+        self.assertEqual(this_list1.highest_domain, "financial")
         this_list2 = Domainer(['money', 'aliens', 'aliens', 'aliens'])
-        self.assertEqual(this_list2.domain_decimal_math(), "scientific" )
+        self.assertEqual(this_list2.highest_domain, "scientific" )
         this_list3 = Domainer(['eat', 'eat', 'eat' ,'aliens'])
-        self.assertEqual(this_list3.domain_decimal_math(), "behavioral" )
+        self.assertEqual(this_list3.highest_domain, "behavioral" )
         this_list4 = Domainer(['school', 'school', 'school', 'aliens'])
-        self.assertEqual(this_list4.domain_decimal_math(), "educational" )
+        self.assertEqual(this_list4.highest_domain, "educational" )
         this_list5 = Domainer(['leader', 'congress', 'leader', 'aliens'])
-        self.assertEqual(this_list5.domain_decimal_math(), "politics" )
+        self.assertEqual(this_list5.highest_domain, "politics" )
         this_list6 = Domainer(['people', 'people', 'people', 'aliens'])
-        self.assertEqual(this_list6.domain_decimal_math(), "relationships" )
+        self.assertEqual(this_list6.highest_domain, "relationships" )
 
 
 
