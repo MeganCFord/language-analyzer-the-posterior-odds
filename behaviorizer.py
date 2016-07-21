@@ -5,7 +5,7 @@ class Posterior:
     def __init__(self, string):
         
         self.initial = str(string)
-        print("your sentence is " + self.initial)
+        # print("your sentence is " + self.initial)
 
         self.spokenizer = Spokenizer(self.initial)
 
@@ -21,11 +21,11 @@ class Behaviorizer:
     def __init__(self, domain, emotion, sentiment):
 
         self.behavior_dict = self.import_json()
-        self.peram_tuple = (domain, emotion, sentiment)
-        self.predicted_behavior = self.find_prediction(str(self.peram_tuple))
+        self.peram_list = [domain, emotion, sentiment]
+        self.prediction = self.find_prediction(str(self.peram_list))
 
         # prints the final result.
-        print("this sentence is {0}, {1}, and {2}, so the speaker probably is: {3}".format(self.peram_tuple[0], self.peram_tuple[1], self.peram_tuple[2], self.predicted_behavior))
+        print("this sentence is {0}, {1}, and {2}, so the speaker probably is: {3}".format(self.peram_list[0], self.peram_list[1], self.peram_list[2], self.prediction))
 
     def import_json(self):
         '''
