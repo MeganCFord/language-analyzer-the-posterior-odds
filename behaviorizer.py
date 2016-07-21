@@ -1,18 +1,20 @@
+from  Spokenizer import *
+from domainer import *
 class Posterior:
 
     def __init__(self, string):
         
         self.initial = str(string)
-        print("your sentence is" + self.initial)
+        print("your sentence is " + self.initial)
 
-        self.spokenizer = Spokenizer(Posterior.initial)
+        self.spokenizer = Spokenizer(self.initial)
 
         # TODO: rename these three finders to what teammates name their find-highest-variable functions.
-        self.master_domain = Domainizer.give_me_highest_domain()
-        self.master_emotion = Emotionizer.find_master()
-        self.master_sentiment = Sentimentizer.find_master()
+        self.master_domain = self.spokenizer.domainer.highest_domain
+        self.master_emotion = "happy"
+        self.master_sentiment = "positive"
 
-        self.predicted_behavior = Behaviorizer(Posterior.master_domain, Posterior.master_emotion, Posterior.master_sentiment)
+        self.predicted_behavior = Behaviorizer(self.master_domain, self.master_emotion, self.master_sentiment)
 
 class Behaviorizer:
 

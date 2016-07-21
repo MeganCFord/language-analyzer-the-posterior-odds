@@ -1,5 +1,6 @@
 import nltk
 from nltk.stem.porter import *
+from domainer import *
 
 class Spokenizer:
 
@@ -9,8 +10,8 @@ class Spokenizer:
         parsed_sentence = self.parse_sentence()
 
         self.domainer = Domainer(parsed_sentence)
-        self.emotionizer = Emotionizer(parsed_sentence)
-        self.sentimentizer = Sentimentizer(parsed_sentence)
+        # self.emotionizer = Emotionizer(parsed_sentence)
+        # self.sentimentizer = Sentimentizer(parsed_sentence)
 
     def parse_sentence(self):
         '''

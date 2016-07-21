@@ -87,8 +87,6 @@ class Domainer:
         self.highest_domain = max(self.final_domain_values.keys(), key=(lambda key: self.final_domain_values[key]))
         return self.highest_domain
 
-    def give_me_highest_domain(self):
-        return self.highest_domain
 
 
     def __str__(self):
