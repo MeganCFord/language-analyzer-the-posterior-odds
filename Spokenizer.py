@@ -14,12 +14,16 @@ class Spokenizer:
 
     def parse_sentence(self):
         '''
-        This function receives the sentence variable, tokenizes it
-        into a list of words, changes any uppercase letters to
-        lowercase, and then removes suffixes from the words.
-        The resulting list of words is printed, and saved above as
-        parsed_sentence. Then it is passed to the Domainer,
-        Sentimentizer, and Emotionizer.
+        This function receives the sentence variable, a string of
+        words.
+
+        Example sentence: "I am not a cheesy example sentence."
+
+        The sentence is tokenized into a list of words,
+        changes any uppercase letters to lowercase, and then removes
+        suffixes from the words. The resulting list of words is
+        printed, and saved above as parsed_sentence. Then it is
+        passed to the Domainer, Sentimentizer, and Emotionizer.
 
         '''
         stemmer = PorterStemmer()
