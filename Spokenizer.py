@@ -1,21 +1,10 @@
-from Posterior import *
 import nltk
 from nltk.stem.porter import *
 
 class Spokenizer:
 
     def __init__(self, sentence):
-        '''
-        This function initializes the Spokenizer object,
-        receiving a string of words, assigning it as a variable,
-        and sending it to the parse_sentence function.
-        The resulting list of words is saved here as parsed_sentence,
-        and passed to the Domainer, Sentimentizer, and Emotionizer.
 
-        Arguments: a string of words.
-        Example: "I am not a cheesy example sentence."
-
-        '''
         self.raw_sentence = sentence
         parsed_sentence = self.parse_sentence()
 
@@ -28,6 +17,9 @@ class Spokenizer:
         This function receives the sentence variable, tokenizes it
         into a list of words, changes any uppercase letters to
         lowercase, and then removes suffixes from the words.
+        The resulting list of words is printed, and saved above as
+        parsed_sentence. Then it is passed to the Domainer,
+        Sentimentizer, and Emotionizer.
 
         '''
         stemmer = PorterStemmer()
