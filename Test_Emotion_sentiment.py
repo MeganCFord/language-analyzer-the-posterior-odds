@@ -34,7 +34,7 @@ class Test_Emotionizer(unittest.TestCase):
         non_sad_sentence = Emotionizer(['happy'])
         self.assertEqual(non_sad_sentence.sad_counter_total, 0)
 
-        sad_sentence = Emotionizer(['ovation'])
+        sad_sentence = Emotionizer(['mourning'])
         self.assertEqual(sad_sentence.sad_counter_total, 1)
 
 
@@ -92,25 +92,25 @@ class Test_Emotionizer(unittest.TestCase):
 
 
         happy_sentence = Emotionizer(['love', 'is', 'love'])
-        self.assertEqual(happy_sentence.find_master(), 'happy')
+        self.assertEqual(happy_sentence.find_highest_emotion(), 'happy')
 
-        sad_sentence = Emotionizer(['sadness', 'is', 'sadness'])
-        self.assertEqual(sad_sentence.find_master(), 'sad')
+        sad_sentence = Emotionizer(['sadly', 'is', 'sadly'])
+        self.assertEqual(sad_sentence.find_highest_emotion(), 'sad')
 
-        angry_sentence = Emotionizer(['pissed', 'is', 'pissed'])
-        self.assertEqual(angry_sentence.find_master(), 'angry')
+        angry_sentence = Emotionizer(['hostile', 'is', 'hostile'])
+        self.assertEqual(angry_sentence.find_highest_emotion(), 'anger')
 
-        disgust_sentence = Emotionizer(['disgusted', 'is', 'disgusted'])
-        self.assertEqual(disgust_sentence.find_master(), 'disgust')
+        disgust_sentence = Emotionizer(['vomit', 'is', 'vomit'])
+        self.assertEqual(disgust_sentence.find_highest_emotion(), 'disgust')
 
-        fear_sentence = Emotionizer(['scared', 'is', 'digusted'])
-        self.assertEqual(fear_sentence.find_master(), 'fear')
+        fear_sentence = Emotionizer(['tyrant', 'is', 'tyrant'])
+        self.assertEqual(fear_sentence.find_highest_emotion(), 'fear')
 
-        positive_sentence = Emotionizer(['love', 'is', 'love'])
-        self.assertEqual(positive_sentence.find_master(), 'positive')
+        positive_sentence = Emotionizer(['biscuit', 'is', 'biscuit'])
+        self.assertEqual(positive_sentence.find_highest_sentiment(), 'positive')
 
-        negative_sentence = Emotionizer(['pissed', 'is', 'pissed'])
-        self.assertEqual(negative_sentence.find_master(), 'negative')
+        negative_sentence = Emotionizer(['hostile', 'is', 'hostile'])
+        self.assertEqual(negative_sentence.find_highest_sentiment(), 'negative')
 
 
 

@@ -5,7 +5,7 @@ class Emotionizer:
     def __init__(self, list_from_original_string):
 
         self.list_from_sentence = list_from_original_string
-        self.emotions = lexicon[0]['emotion']
+        self.emotions = lexicon['emotion']
         self.happy_counter_total = self.happy_counter(self.list_from_sentence)
         self.sad_counter_total = self.sad_counter(self.list_from_sentence)
         self.angry_counter_total = self.angry_counter(self.list_from_sentence)
@@ -13,6 +13,7 @@ class Emotionizer:
         self.fear_counter_total = self.fear_counter(self.list_from_sentence)
         self.positive_counter_total = self.positive_counter(self.list_from_sentence)
         self.negative_counter_total = self.negative_counter(self.list_from_sentence)
+
 
 
 
@@ -28,24 +29,60 @@ class Emotionizer:
 
 
         def define_percentages_for_emotions(self):
-            emotional_decimal_values = {'happy': self.happy_counter_total / self.all_points_from_emotions, 'sad': self.sad_counter_total / self.all_points_from_emotions, 'anger': self.angry_counter_total / self.all_points_from_emotions, 'disgust': self.disgust_counter_total / self.all_points_from_emotions, 'fear': self.fear_counter_total / self.all_points_from_emotions}
+            if self.all_points_from_emotions == 0:
+                self.emotional_decimal_values = {
+                    "happy": 0,
+                    "sad": 0,
+                    "anger": 0,
+                    "disgust": 0,
+                    "fear": 0
+                }
 
-            # sentimental_decimal_values = {'positive': self.positive_counter_total / self.all_points_from_sentiments, 'negative': self.negative_counter_total / self.all_points_from_sentiments}
+                print('Emotional Percentages: \n %{0}: happy \n %{1}: sad \n %{2}: anger \n %{3}: disgust \n %{4}: fear'.format(self.emotional_decimal_values['happy'], self.emotional_decimal_values['sad'], self.emotional_decimal_values['anger'], self.emotional_decimal_values['disgust'], self.emotional_decimal_values['fear']))
+            else:
+                self.emotional_decimal_values = {
+                    'happy': self.happy_counter_total / self.all_points_from_emotions,
+                    'sad': self.sad_counter_total / self.all_points_from_emotions,
+                    'anger': self.angry_counter_total / self.all_points_from_emotions,
+                    'disgust': self.disgust_counter_total / self.all_points_from_emotions,
+                    'fear': self.fear_counter_total / self.all_points_from_emotions
+                }
 
-            print('Emotional & Sentimental Percentages: \n %{0}: happy \n %{1}: sad \n %{2}: anger \n %{3}: disgust \n %{4}: fear'.format(emotional_decimal_values['happy'], emotional_decimal_values['sad'], emotional_decimal_values['anger'], emotional_decimal_values['disgust'], emotional_decimal_values['fear']))
+                print('Emotional Percentages: \n %{0}: happy \n %{1}: sad \n %{2}: anger \n %{3}: disgust \n %{4}: fear'.format(self.emotional_decimal_values['happy'], self.emotional_decimal_values['sad'], self.emotional_decimal_values['anger'], self.emotional_decimal_values['disgust'], self.emotional_decimal_values['fear']))
+
+            return self.emotional_decimal_values
 
         def define_percentages_for_sentiments(self):
-            sentimental_decimal_values = {'positive': self.positive_counter_total / self.all_points_from_sentiments, 'negative': self.negative_counter_total / self.all_points_from_sentiments}
+            if self.all_points_from_sentiments == 0:
+                self.sentimental_decimal_values = {
+                    "positive": 0,
+                    "negative": 0
+                }
 
-            print('Sentimental Percentages: \n %{0}: Positive \n %{1}: Negative'.format(sentimental_decimal_values['positive'], sentimental_decimal_values['negative']))
+                print('Sentimental Percentages: \n %{0}: Positive \n %{1}: Negative'.format(self.sentimental_decimal_values['positive'], self.sentimental_decimal_values['negative']))
+            else:
+                self.sentimental_decimal_values = {
+                    'positive': self.positive_counter_total / self.all_points_from_sentiments,
+                    'negative': self.negative_counter_total / self.all_points_from_sentiments
+                }
+
+                print('Sentimental Percentages: \n %{0}: Positive \n %{1}: Negative'.format(self.sentimental_decimal_values['positive'], self.sentimental_decimal_values['negative']))
+
+            return self.sentimental_decimal_values
 
         self.all_points_from_emotions = calculate_all_emotional_points(self, self.happy_counter_total, self.sad_counter_total, self.angry_counter_total, self.disgust_counter_total, self.fear_counter_total)
 
         self.all_points_from_sentiments = calculate_all_sentiment_points(self, self.positive_counter_total, self.negative_counter_total)
 
-        define_percentages_for_emotions(self)
+        # define_percentages_for_emotions(self)
 
-        define_percentages_for_sentiments(self)
+        # define_percentages_for_sentiments(self)
+
+        self.final_emotional_decimal_values = define_percentages_for_emotions(self)
+        self.final_sentimental_decimal_values = define_percentages_for_sentiments(self)
+        self.highest_emotion = self.find_highest_emotion()
+        self.highest_sentiment = self.find_highest_sentiment()
+
 
 
     def happy_counter(self, list_to_analyze):
@@ -67,7 +104,7 @@ class Emotionizer:
 
             #     counter -= 1
 
-        print('happy_counter', counter)
+        print('happy_counter', '%' + str(counter))
         return counter
 
 
@@ -85,7 +122,7 @@ class Emotionizer:
 
             #     counter -= 1
 
-        print('sad_counter', counter)
+        print('sad_counter', '%' + str(counter))
         return counter
 
 
@@ -103,7 +140,7 @@ class Emotionizer:
 
             #     counter -= 1
 
-        print('angry_counter', counter)
+        print('angry_counter', '%' + str(counter))
         return counter
 
 
@@ -122,7 +159,7 @@ class Emotionizer:
 
             #     counter -= 1
 
-        print('disgust_counter', counter)
+        print('disgust_counter', '%' + str(counter))
         return counter
 
 
@@ -141,7 +178,7 @@ class Emotionizer:
 
             #     fear_counter -= 1
 
-        print('fear_counter', counter)
+        print('fear_counter', '%' + str(counter))
         return counter
 
 
@@ -157,7 +194,7 @@ class Emotionizer:
                 counter += 1
 
 
-        print('pos_counter', counter)
+        print('pos_counter', '%' + str(counter))
         return counter
 
 
@@ -173,12 +210,25 @@ class Emotionizer:
 
                 counter += 1
 
-        print('neg_counter', counter)
+        print('neg_counter', '%' + str(counter))
         return counter
 
 
-    def find_master(self):
-        pass
+    def find_highest_emotion(self):
+
+        self.highest_emotion = max(self.final_emotional_decimal_values.keys(), key=(lambda key: self.final_emotional_decimal_values[key]))
+        return self.highest_emotion
+
+
+    def find_highest_sentiment(self):
+
+        self.highest_sentiment = max(self.final_sentimental_decimal_values.keys(), key=(lambda key: self.final_sentimental_decimal_values[key]))
+        return self.highest_sentiment
+
+    # def find_highest_domain(self):
+
+    #     self.highest_domain = max(self.final_domain_values.keys(), key=(lambda key: self.final_domain_values[key]))
+    #     return self.highest_domain
 
 
 
