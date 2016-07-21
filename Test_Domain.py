@@ -5,7 +5,7 @@ class Test_domainer(unittest.TestCase):
     @classmethod
     def setUpClass(self):
 
-        self.original_list = list()
+        self.original_list = ['apple']
 
     def test_what_it_receives_is_a_list(self):
         sample_list = Domainer(self.original_list)
@@ -47,19 +47,20 @@ class Test_domainer(unittest.TestCase):
         relationships_list2 = Domainer(['people', 'relative', 'mother'])
         self.assertEqual(relationships_list2.relationships_counter(), 3)
 
-    def test_sentence_returns_domain(self):
-        this_sentence = Domainer('money money money aliens')
-        self.assertEqual(this_sentence.find_master(), "financial")
-        this_sentence = Domainer('money aliens aliens aliens')
-        self.assertEqual(this_sentence.find_master(), "scientific" )
-        this_sentence = Domainer('eat eat eat aliens')
-        self.assertEqual(this_sentence.find_master(), "behavioral" )
-        this_sentence = Domainer('school school school aliens')
-        self.assertEqual(this_sentence.find_master(), "educational" )
-        this_sentence = Domainer('leader congress leader aliens')
-        self.assertEqual(this_sentence.find_master(), "political" )
-        this_sentence = Domainer('people people people aliens')
-        self.assertEqual(this_sentence.find_master(), "relational" )
+    def test_list_returns_domain(self):
+        this_list1 = Domainer(['money', 'money', 'money', 'aliens'])
+        self.assertEqual(this_list1.domain_decimal_math(), "financial")
+        this_list2 = Domainer(['money', 'aliens', 'aliens', 'aliens'])
+        self.assertEqual(this_list2.domain_decimal_math(), "scientific" )
+        this_list3 = Domainer(['eat', 'eat', 'eat' ,'aliens'])
+        self.assertEqual(this_list3.domain_decimal_math(), "behavioral" )
+        this_list4 = Domainer(['school', 'school', 'school', 'aliens'])
+        self.assertEqual(this_list4.domain_decimal_math(), "educational" )
+        this_list5 = Domainer(['leader', 'congress', 'leader', 'aliens'])
+        self.assertEqual(this_list5.domain_decimal_math(), "politics" )
+        this_list6 = Domainer(['people', 'people', 'people', 'aliens'])
+        self.assertEqual(this_list6.domain_decimal_math(), "relationships" )
+
 
 
 
@@ -69,11 +70,4 @@ if __name__ == '__main__':
     unittest.main()
 
 
-    # TODO: loop test with counter end tests (match adds a point, no match does not add a point)
-    # TODO: math test to divide each non-zero counter against total num of accru
-    # TODO: print the decimal value of each non-zero counter.
-    # TODO: assigns highest value(s) to an object to send to the behaviorizer
 
-# find_master
-# returns the name of the highest value counter
-# if two counter totals are the same, i need the first one
