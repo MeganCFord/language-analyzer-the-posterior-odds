@@ -21,6 +21,9 @@ class Domainer:
         print("this sentence has an domain count of: {0} financial, {1} behavioral, {2} scientific, {3} educational,  {4} politics, and {5} relationships".format(self.domain_decimals["financial"], self.domain_decimals["behavioral"], self.domain_decimals["scientific"], self.domain_decimals["educational"], self.domain_decimals["politics"], self.domain_decimals["relationships"]))
 
     def total_all_domain_points(self):
+        """
+        This function tallies all of the domain counters and stores the total in the self.total variable.
+        """
         self.total = self.financial_total + self.behavioral_total + self.scientific_total + self.educational_total + self.political_total + self.relationships_total
 
         return self.total
@@ -36,7 +39,7 @@ class Domainer:
         return self.financial_count
 
     def behavioral_counter(self):
-         """
+        """
         The behavioral_counter adds a 1 for each word in the list passed in that matches the behavioral lexicon and then adds them together, stores and returns the total of 1s added to behavioral_count
         """
         self.behavioral_count = sum([1 for word in self.sample_list
