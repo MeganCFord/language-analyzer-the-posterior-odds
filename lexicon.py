@@ -1,4 +1,4 @@
-lexicon = [
+lexicon = {
   "domain": {
     "financial": ["money", "cash", "class", "dollar", "loan", "pay", "buy", "purchase", "get", "acquire",
       "sell", "sale", "trade", "rent", "mortgage", "rate", "invest", "devest", "lose", "gain",
@@ -92,4 +92,4 @@ lexicon = [
       ]
     }
   }
-]
+}
