@@ -113,7 +113,6 @@ class Test_Emotionizer(unittest.TestCase):
         self.assertEqual(negative_sentence.find_highest_sentiment(), 'negative')
 
 
-
     # TODO: loop test with counter end tests (test that match adds one, that no match does not add one)
     # TODO: math test to divide each non-zero counter against total num of accrued points.
     # TODO: print the decimal value of each non-zero counter.
