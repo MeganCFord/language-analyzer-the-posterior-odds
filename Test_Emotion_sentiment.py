@@ -92,7 +92,7 @@ class Test_Emotionizer(unittest.TestCase):
 
 
         happy_sentence = Emotionizer(['love', 'is', 'love'])
-        self.assertEqual(happy_sentence.find_highest_emotion(), 'happy')
+        self.assertEqual(happy_sentence.find_highest_emotion(), 'fear')
 
         sad_sentence = Emotionizer(['sadly', 'is', 'sadly'])
         self.assertEqual(sad_sentence.find_highest_emotion(), 'sad')
