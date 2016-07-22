@@ -1,29 +1,31 @@
+from  Spokenizer import *
+from domainer import *
 class Posterior:
 
     def __init__(self, string):
         
         self.initial = str(string)
-        print("your sentence is" + self.initial)
+        # print("your sentence is " + self.initial)
 
-        self.spokenizer = Spokenizer(Posterior.initial)
+        self.spokenizer = Spokenizer(self.initial)
 
         # TODO: rename these three finders to what teammates name their find-highest-variable functions.
-        self.master_domain = Domainizer.give_me_highest_domain()
-        self.master_emotion = Emotionizer.find_master()
-        self.master_sentiment = Sentimentizer.find_master()
+        self.master_domain = self.spokenizer.domainer.highest_domain
+        self.master_emotion = "happy"
+        self.master_sentiment = "negative"
 
-        self.predicted_behavior = Behaviorizer(Posterior.master_domain, Posterior.master_emotion, Posterior.master_sentiment)
+        self.predicted_behavior = Behaviorizer(self.master_sentiment, self.master_emotion, self.master_domain)
 
 class Behaviorizer:
 
-    def __init__(self, domain, emotion, sentiment):
+    def __init__(self, sentiment, emotion, domain):
 
         self.behavior_dict = self.import_json()
-        self.peram_tuple = (domain, emotion, sentiment)
-        self.predicted_behavior = self.find_prediction(str(self.peram_tuple))
+        self.peram_list = [sentiment, emotion, domain]
+        self.prediction = self.find_prediction(str(self.peram_list))
 
         # prints the final result.
-        print("this sentence is {0}, {1}, and {2}, so the speaker probably is: {3}".format(self.peram_tuple[0], self.peram_tuple[1], self.peram_tuple[2], self.predicted_behavior))
+        print("this sentence is {0}, {1}, and {2}, so the speaker probably is: {3}".format(self.peram_list[0], self.peram_list[1], self.peram_list[2], self.prediction))
 
     def import_json(self):
         '''
