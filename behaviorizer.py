@@ -36,7 +36,7 @@ class Behaviorizer:
 
         '''
         import json
-        from pprint import pprint
+        # from pprint import pprint
         # loads json of potential behaviors (I think).
         with open('Behavior_List.json') as data_file:
             behaviors = json.load(data_file)
