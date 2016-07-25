@@ -32,8 +32,14 @@ As a team, our goals were:
     var = behaviorizer.Posterior("Your message here")
     ```
 This will give you a very silly behavior prediction, as well as a set of emotions, sentiments, and domains that were analyzed in your message.
+
+
 ![screenshot](screenshot_one.jpg)
+
+
 ![screenshot](screenshot_two.jpg)
+
+
 ### Project Instructions:
 Language Analyzer Group Project
 ##### Information:
